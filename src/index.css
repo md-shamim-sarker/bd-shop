@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-shop {
+        @apply bg-pink-700 hover:bg-pink-600 px-5 py-2 text-lg font-semibold text-pink-100 rounded-md
+    }
+}
