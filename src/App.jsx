@@ -1,5 +1,6 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import About from "./components/About/About";
+import Errorpage from "./components/Errorpage/Errorpage";
 import Home from "./components/Home/Home";
 import Orders from "./components/Orders/Orders";
 import Products from "./components/Products/Products";
@@ -38,6 +39,10 @@ function App() {
         }
       ]
     },
+    {
+      path: "/*",
+      element: <Errorpage></Errorpage>
+    }
   ]);
   return (
     <div>
