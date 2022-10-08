@@ -23,6 +23,7 @@ function App() {
         },
         {
           path: "/products",
+          loader: () => fetch("./products.json"),
           element: <Products></Products>
         },
         {
