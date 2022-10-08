@@ -1,50 +1,55 @@
-import {faBars, faCartShopping, faHamburger, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faAddressCard, faCartPlus, faCartShopping, faGuitar, faHome, faUserAlt} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="bg-pink-700 text-pink-50">
-            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
-                    <div className="flex-1 md:flex md:items-center md:gap-12 text-2xl font-black">
-                        <Link to={"/"}>
-                            <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-                            <h2 className='inline-block ml-3'>BD SHOP</h2>
-                        </Link>
-                    </div>
-                    <div className="md:flex md:items-center md:gap-12">
-                        <nav className="hidden md:block">
-                            <ul className="flex items-center gap-6 text-sm">
-                                <li className='hover:underline'><Link to={"/home"}>Home</Link></li>
-                                <li className='hover:underline'><Link to={"/products"}>Products</Link></li>
-                                <li className='hover:underline'><Link to={"/orders"}>Orders</Link></li>
-                                <li className='hover:underline'><Link to={"/about"}>About</Link></li>
-                                <li className='hover:underline'><Link to={"/profile"}>Profile</Link></li>
-                            </ul>
-                        </nav>
-
-                        <div className="flex items-center gap-4">
-                            <div className="sm:flex sm:gap-4">
-                                <Link>
-                                    <div className="rounded-md bg-pink-100 px-5 py-2 text-sm font-medium text-pink-700">
-                                        Login
-                                    </div>
-                                </Link>
-                            </div>
-
-                            <div className="block md:hidden text-2xl">
-                                <button className="rounded p-2 transition">
-                                    <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
-                                </button>
-                            </div>
+        <header className='bg-pink-700 text-pink-50 py-5'>
+            <div className='w-4/5 mx-auto flex items-center justify-between'>
+                <div className='flex items-center gap-x-3 text-2xl font-extrabold'>
+                    <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon>
+                    <div>BD SHOP</div>
+                </div>
+                <div className='flex gap-x-5'>
+                    <nav className='hidden lg:flex gap-x-5'>
+                        <Link to={"/home"}>Home</Link>
+                        <Link to={"/products"}>Products</Link>
+                        <Link to={"/orders"}>Orders</Link>
+                        <Link to={"/about"}>About</Link>
+                    </nav>
+                    <div className='flex gap-x-5'>
+                        <div className='relative'>
+                            <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon>
+                            <small className='bg-pink-50 text-pink-700 rounded-full px-1 absolute bottom-3 left-3'>
+                                5
+                            </small>
+                        </div>
+                        <div className='hidden md:block'>
+                            <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
 
+            <nav className=' bg-pink-700 w-full flex lg:hidden fixed bottom-0 justify-around text-2xl py-3'>
+                <Link to={"/home"}>
+                    <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
+                </Link>
+                <Link to={"/products"}>
+                    <FontAwesomeIcon icon={faGuitar}></FontAwesomeIcon>
+                </Link>
+                <Link to={"/orders"}>
+                    <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon>
+                </Link>
+                <Link to={"/about"}>
+                    <FontAwesomeIcon icon={faAddressCard}></FontAwesomeIcon>
+                </Link>
+                <Link>
+                    <FontAwesomeIcon icon={faUserAlt}></FontAwesomeIcon>
+                </Link>
+            </nav>
+        </header>
     );
 };
 
